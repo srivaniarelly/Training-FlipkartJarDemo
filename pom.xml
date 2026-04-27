@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ===================================================== -->
+    <!--  SECTION 1: Project Metadata                          -->
+    <!-- ===================================================== -->
+    <groupId>com.rushi</groupId>
+    <artifactId>flipkart-clone</artifactId>
+    <version>1.0.0</version>
+
+    <!-- KEY DIFFERENCE: this builds a JAR -->
+    <packaging>jar</packaging>
+
+    <name>Flipkart Clone JAR - by Rushi</name>
+    <description>Standalone Java application demo for Maven Day 02</description>
+
+    <!-- ===================================================== -->
+    <!--  SECTION 2: Tools and Versions                        -->
+    <!-- ===================================================== -->
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- ===================================================== -->
+    <!--  SECTION 3: Dependencies (none for this demo)         -->
+    <!--  We use Java's built-in com.sun.net.httpserver         -->
+    <!-- ===================================================== -->
+    <dependencies>
+        <!-- No external libraries required! -->
+    </dependencies>
+
+    <!-- ===================================================== -->
+    <!--  Build configuration                                  -->
+    <!-- ===================================================== -->
+    <build>
+        <!-- Final JAR name: target/flipkart-clone.jar -->
+        <finalName>flipkart-clone</finalName>
+
+        <plugins>
+            <!--
+              maven-jar-plugin
+              Tells Maven which class has the main() method
+              so we can run with: java -jar flipkart-clone.jar
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.rushi.flipkart.App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
