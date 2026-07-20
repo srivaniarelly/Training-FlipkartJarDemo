@@ -10,3 +10,4 @@ java -jar target/flipkart-clone.jar
 ```
 
 Open browser: **http://localhost:8080**
+.
